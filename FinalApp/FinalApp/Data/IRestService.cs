@@ -7,7 +7,7 @@ namespace FinalApp.Data
 {
 	public interface IRestService
 	{
-        Task<List<PlantItem>> RefreshDataAsync();
+        Task<List<PlantItem>> RefreshDataAsync(string term);
 
 
 

@@ -20,11 +20,11 @@ namespace FinalApp.Data
             _client = new HttpClient();
         }
 
-        public async Task<List<PlantItem>> RefreshDataAsync()
+        public async Task<List<PlantItem>> RefreshDataAsync(string term)
         {
             PlantItems = new List<PlantItem>();
 
-            var uri = new Uri(string.Format(Constants.PlantItemUrl, string.Empty));
+            var uri = new Uri(string.Format(Constants.PlantItemUrl + term, string.Empty));
 
             try
             {
@@ -35,7 +35,7 @@ namespace FinalApp.Data
                     if (response.IsSuccessStatusCode)
                     {
                         var content = await response.Content.ReadAsStringAsync();
-                        // Debug.WriteLine(content);
+                        Debug.WriteLine(content);
                         PlantItem plant = JsonConvert.DeserializeObject<PlantItem>(content);
                         Debug.WriteLine(plant);
                         PlantItems.Add(plant);

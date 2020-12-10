@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace FinalApp.Data
 {
-    class PlantItemManager
+    public class PlantItemManager
     {
 			IRestService restService;
 
@@ -14,9 +14,9 @@ namespace FinalApp.Data
 				restService = service;
 			}
 
-			public Task<List<PlantItem>> GetTasksAsync()
+			public Task<List<PlantItem>> GetTasksAsync(string term)
 			{
-				return restService.RefreshDataAsync();
+				return restService.RefreshDataAsync(term);
 			}
 		}
 }

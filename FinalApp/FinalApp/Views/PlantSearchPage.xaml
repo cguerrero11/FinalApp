@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalApp.Views.PlantSearchPage"
+             xmlns:vm="clr-namespace:FinalApp.ViewModels"
+             Title="{Binding Title}">
+    
+
+        <ContentPage.BindingContext>
+            <vm:PlantSearchViewModel />
+        </ContentPage.BindingContext>
+        
+    <StackLayout>
+        <Entry Placeholder="Type a plant here..." x:Name="input" BackgroundColor="#9deb34" Keyboard="Default" Unfocused="Search"/>
+        <Label x:Name="text"/>
+        <Label x:Name="output"/>
+
+        <ListView x:Name="listView"
+              Margin="20">
+            <!--ItemSelected="OnItemSelected">-->
+            
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="20,0,0,0"
+                                 HorizontalOptions="StartAndExpand"
+                                 Orientation="Horizontal">
+                            <Label Text="{Binding Text}" TextColor="Black"
+                               VerticalTextAlignment="Center" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+    
+</ContentPage>
