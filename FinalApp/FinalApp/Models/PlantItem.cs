@@ -16,5 +16,7 @@ namespace FinalApp
 
         [JsonProperty(PropertyName = "image_url")]
         public string imageURL { get; set; }
+
+
     }
 }

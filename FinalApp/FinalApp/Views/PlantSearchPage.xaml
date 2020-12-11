@@ -26,8 +26,10 @@
                         <StackLayout Padding="20,0,0,0"
                                  HorizontalOptions="StartAndExpand"
                                  Orientation="Horizontal">
-                            <Label Text="{Binding Text}" TextColor="Black"
+                            <Label Text="{Binding commonName}" TextColor="Black" FontSize="10"
                                VerticalTextAlignment="Center" />
+                            <Image Source="{Binding imageURL}"/>
+                            <Label Text="{Binding scientificName}"/>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
