@@ -26,7 +26,7 @@ namespace FinalApp.Views
         {
             //activiates async
             //make input.Text search for 
-            output.Text = input.Text;
+            //output.Text = input.Text;
 
             //PlantItem 
             listView.ItemsSource = await App.PlantItemManager.GetTasksAsync(input.Text);
